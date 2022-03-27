@@ -1,0 +1,152 @@
+body {
+    margin: 0px; 
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 106px;
+    background: #C4E1F2;
+}
+
+#content {
+    background: #E5E5E5;
+}
+
+#footer {
+    display: flex;
+    font-family: 'Heebo';
+    font-size: 24px;
+    color: #402B19;
+    align-items: center;
+    justify-content: center;
+    height: 130px;
+    background: #B0BF3F;
+}
+
+#selections {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 28px;
+    column-gap: 24px;
+}
+
+#hiking_types {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 18px;
+}
+
+#sliders {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+}
+
+.rangeValue {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    color: #402B19;
+    font-weight: 24;
+}
+
+.range {
+    -webkit-appearance: none;
+    width: 170px;
+    height: 3px;
+    border-radius: 5px;
+    background: black;
+    outline: none;
+}
+  
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #C5D930;
+    cursor: pointer;
+}
+
+select#difficulty {
+    width: 280px;
+    height: 50px;
+}
+
+@font-face {
+    font-family: 'Gugi'; 
+    src: url("resources/Gugi-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Heebo'; 
+    src: url("resources/Heebo-VariableFont_wght.ttf");
+}
+
+#header h1 {
+    padding-left: 28px;
+    font-family: 'Gugi';
+    font-size: 64px; 
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #402B19;
+}
+
+.header_button {
+    font-family: 'Gugi';
+    font-size: 36px; 
+    margin-left: auto; 
+    margin-right: 64px;
+    width: 225px;
+    height: 51px;
+    background: #C5D930;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    padding-bottom: 170px;
+}
+.grid-item {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.bg-modal {
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-contents {
+	height: 700px;
+	width: 1400px;
+	background-color: #C4E1F2;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+	border-radius: 4px;
+}
+
+.close {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 42px;
+	color: #333;
+	transform: rotate(45deg);
+	cursor: pointer;
+}
+
