@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>MATKAMA</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="header">
+        <div>
+            <h1>MATKAMA</h1>
+        </div>
+        <div>
+            <button onclick="window.location.href='index.html'" class="header_button">Rajad</button> 
+            <button onclick="window.location.href='jutud.html'" class="header_button">Jutud</button> 
+        </div>
+    </div>
+    <div id="content">
+        <div id="selections">
+            <div id="hiking_types">
+                <input id="hike_button" type="image" src="resources/hiking_black_48dp 1.png" />
+                <input id="hike_button" type="image" src="resources/directions_bike_black_48dp 1.png" />
+                <input id="hike_button" type="image" src="resources/kayaking_black_48dp 1.png" />
+            </div>
+            <div id="sliders">
+                <div>
+                    <span class="rangeValue" id="rangeValueKilometres">1 km</span>
+                    <input class="range" type="range" value="1" min="1" max="50" onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)"></input>
+                </div>
+                <div>
+                    <span class="rangeValue" id="rangeValueHours">1 h</span>
+                    <input class="range" type="range" value="1" min="1" max="24" onChange="rangeSlideHours(this.value)" onmousemove="rangeSlideHours(this.value)"></input>
+                </div>
+            </div>
+            <div id="difficulties">
+                <select name="difficulty" id="difficulty">
+                    <option value="" disabled selected>Vali raskus...</option>
+                    <option value="kerge">Kerge</option>
+                    <option value="keskmine">Keskmine</option>
+                    <option value="raske">Raske</option>
+                </select>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item" id="rada1" onclick="showContents(this.id)"><img src="resources/Rajablokk 1.png"></div>
+            <div class="grid-item" id="rada2" onclick="showContents(this.id)"><img src="resources/Rajablokk 2.png"></div>
+            <div class="grid-item" id="rada3" onclick="showContents(this.id)"><img src="resources/Rajablokk 3.png"></div>
+            <div class="grid-item" id="rada4" onclick="showContents(this.id)"><img src="resources/Rajablokk 4.png"></div>
+        </div>
+        <div class="bg-modal">
+            <div class="modal-contents">
+                <div class="close">+</div>
+                <p>Siia tuleb info</p>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        matkama@matkama.ee
+    </div>
+    <script type='text/javascript' src="scripts.js"></script>
+  </body>
+</html>
