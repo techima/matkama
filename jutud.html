@@ -1,12 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <link href="styles.css" rel="stylesheet" />
-</head>
-<body>
-
+<!doctype html>
+<html>
+  <head>
+    <title>MATKAMA</title>
+    <link rel="stylesheet" href="stylesjutud.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <meta charset="utf-8"/>
+  <body>
+    <div id="header">
+        <div>
+            <h1>MATKAMA</h1>
+        </div>
+        <div>
+            <button onclick="window.location.href='index.html'" class="header_button">Rajad</button> 
+            <button onclick="window.location.href='jutud.html'" class="header_button">Jutud</button> 
+        </div>
+    </div>
+    <div id="posts">
+      <div id="header_and_search">
+        <h2>Matkapostitused</h2>
+        <input id="search" type="text" placeholder="Otsi postitusest" oninput="searchPosts(this.value)"></input>
+      </div>
+      <div class="post" id="esimene" onclick="showPostContent(this.id)">
+        Kuidas miinuskraadid positiivust teevad | 22.02.2022 | MatkaKati
+      </div>
+      <div class="post" id="teine" onclick="showPostContent(this.id)">
+        Meestega Matsalus | 12.12.2021 | MatkaMati
+      </div>
+      <div class="post" id="kolmas" onclick="showPostContent(this.id)">
+        Võrtsjärve seiklus | 15.08.2021 | TiQ
+      </div>
+      <div class="post" id="neljas" onclick="showPostContent(this.id)">
+        Koeru raba | 17.06.2020 | Meelis
+      </div>
+    </div>
+    <div id="footer">
+        matkama@matkama.ee
+    </div>
     <script type='text/javascript' src="scripts.js"></script>
-</body>
+  </body>
 </html>

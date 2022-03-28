@@ -6,6 +6,11 @@ var hikeToggled = false;
 var bikeToggled = false;
 var kayakToggled = false;
 
+var esimeneTekst = document.getElementById("esimene").innerHTML.toLocaleLowerCase()
+var teineTekst = document.getElementById("teine").innerHTML.toLocaleLowerCase()
+var kolmasTekst = document.getElementById("kolmas").innerHTML.toLocaleLowerCase()
+var neljasTekst = document.getElementById("neljas").innerHTML.toLocaleLowerCase()
+
 function rangeSlide(value) {
     km = value
     document.getElementById('rangeValueKilometres').innerHTML = km + " km";
@@ -60,9 +65,9 @@ function showContents(id) {
     document.querySelector('.bg-modal').style.display = "flex";
 }
 
-document.querySelector('.close').addEventListener("click", function() {
-	document.querySelector('.bg-modal').style.display = "none";
-});
+function closeWindow() {
+    document.getElementById("bg-modal").style.display = "none";
+}
 
 function updateIcons() {
     document.getElementById("hike").src = "resources/hiking_black_48dp 1.png"
@@ -239,4 +244,43 @@ function getDescription(id) {
 function selectedDifficulty(selectObject) {
     raskus = selectObject.value;  
     updateTracks()
+}
+
+function showPostContent(id) {
+
+}
+
+function showAllPosts() {
+    posts = ["esimene", "teine", "kolmas", "neljas"]
+    for (let i = 0; i < posts.length; i++) {
+        document.getElementById(posts[i]).style.display = "block";
+    }
+}
+
+function hideAllPosts() {
+    posts = ["esimene", "teine", "kolmas", "neljas"]
+    for (let i = 0; i < posts.length; i++) {
+        document.getElementById(posts[i]).style.display = "none";
+    }
+}
+
+function searchPosts(text) {
+    text = text.toLocaleLowerCase()
+    if (text.length >= 2) {
+        hideAllPosts()
+        if (esimeneTekst.includes(text)) {
+            document.getElementById("esimene").style.display = "block";
+        }
+        if (teineTekst.includes(text)) {
+            document.getElementById("teine").style.display = "block";
+        }
+        if (kolmasTekst.includes(text)) {
+            document.getElementById("kolmas").style.display = "block";
+        }
+        if (neljasTekst.includes(text)) {
+            document.getElementById("neljas").style.display = "block";
+        }
+    } else {
+        showAllPosts()
+    }
 }
