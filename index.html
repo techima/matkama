@@ -4,6 +4,7 @@
     <title>MATKAMA</title>
     <link rel="stylesheet" href="styles.css">
   </head>
+  <meta charset="utf-8"/>
   <body>
     <div id="header">
         <div>
@@ -17,9 +18,9 @@
     <div id="content">
         <div id="selections">
             <div id="hiking_types">
-                <input id="hike_button" type="image" src="resources/hiking_black_48dp 1.png" />
-                <input id="hike_button" type="image" src="resources/directions_bike_black_48dp 1.png" />
-                <input id="hike_button" type="image" src="resources/kayaking_black_48dp 1.png" />
+                <input id="hike" class="hike_button" onclick="selectionButtonClicked(this.id)" type="image" src="resources/hiking_black_48dp 1.png" />
+                <input id="bike" class="hike_button" onclick="selectionButtonClicked(this.id)" type="image" src="resources/directions_bike_black_48dp 1.png" />
+                <input id="kayak" class="hike_button" onclick="selectionButtonClicked(this.id)" type="image" src="resources/kayaking_black_48dp 1.png" />
             </div>
             <div id="sliders">
                 <div>
@@ -32,8 +33,8 @@
                 </div>
             </div>
             <div id="difficulties">
-                <select name="difficulty" id="difficulty">
-                    <option value="" disabled selected>Vali raskus...</option>
+                <select name="difficulty" id="difficulty" onchange="selectedDifficulty(this)">
+                    <option value="">Vali raskus...</option>
                     <option value="kerge">Kerge</option>
                     <option value="keskmine">Keskmine</option>
                     <option value="raske">Raske</option>
@@ -46,10 +47,40 @@
             <div class="grid-item" id="rada3" onclick="showContents(this.id)"><img src="resources/Rajablokk 3.png"></div>
             <div class="grid-item" id="rada4" onclick="showContents(this.id)"><img src="resources/Rajablokk 4.png"></div>
         </div>
+        <p id="no_tracks" style="visibility: hidden">Selliste parameetritega radu paraku ei leidu.</p>
         <div class="bg-modal">
             <div class="modal-contents">
                 <div class="close">+</div>
-                <p>Siia tuleb info</p>
+                <h2>Matkarada</h2>
+                <div class="extra_info">
+                    <div id="map">
+
+                    </div>
+                    <div id="small_details">
+                        <img id="info_logo" src="resources/directions_bike_black_48dp 1.png">
+                        <table id="details_table">
+                            <tr>
+                                <td>Pikkus</td>
+                                <td id="pikkus">3,5 km</td>
+                            </tr>
+                            <tr>
+                                <td>Kestus</td>
+                                <td id="kestus">1 h</td>
+                            </tr>
+                            <tr>
+                                <td>Raskus</td>
+                                <td id="raskus">Kerge</td>
+                            </tr>
+                          </table>
+                    </div>
+                    <div id="description">
+                        <p id="descriptive_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                         nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
+                         esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
+                         in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -57,5 +88,9 @@
         matkama@matkama.ee
     </div>
     <script type='text/javascript' src="scripts.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7z-yMN9d2Ww1p6iU66v0_kkErVLjykio&callback=initMap&v=weekly"
+      async
+    ></script>
   </body>
 </html>

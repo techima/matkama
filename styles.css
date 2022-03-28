@@ -11,6 +11,7 @@ body {
 }
 
 #content {
+    height: 900px;
     background: #E5E5E5;
 }
 
@@ -95,6 +96,14 @@ select#difficulty {
     color: #402B19;
 }
 
+.modal-contents h2 {
+    font-family: 'Gugi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    color: #402B19;
+}
+
 .header_button {
     font-family: 'Gugi';
     font-size: 36px; 
@@ -112,6 +121,7 @@ select#difficulty {
     grid-template-columns: auto auto;
     padding: 10px;
     padding-bottom: 170px;
+    justify-items: start;
 }
 .grid-item {
     padding: 20px;
@@ -134,7 +144,7 @@ select#difficulty {
 	height: 700px;
 	width: 1400px;
 	background-color: #C4E1F2;
-	text-align: center;
+	text-align: left;
 	padding: 20px;
 	position: relative;
 	border-radius: 4px;
@@ -148,5 +158,65 @@ select#difficulty {
 	color: #333;
 	transform: rotate(45deg);
 	cursor: pointer;
+}
+
+#map {
+    height: 600px;
+    width: 300px;
+}
+
+#small_details {
+    width: 200px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#small_details img {
+    display: block;
+    margin-left: auto;
+    margin-right: 45px;
+    margin-top: 9px;
+}
+
+#details_table {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    margin-top: 14px;
+}
+
+td {
+    font-family: "Heebo";
+    font-size: 16px;
+    color: #402B19;
+    width: 70%;
+    text-align: left;
+}
+
+#description {
+    width: 820px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#description p {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: "Heebo";
+    font-size: 24px;
+    color: #402B19;
+}
+
+.extra_info {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+}
+
+#no_tracks {
+    text-align: center;
+    font-family: "Heebo";
+    font-size: 24px;
+    color: #402B19;
 }
 
