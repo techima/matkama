@@ -264,9 +264,9 @@ function selectedDifficulty(selectObject) {
 }
 
 function showPostContent(id) {
-    document.querySelector('.modal-dialog').style.display = "flex";
     document.getElementById("postituse_pealkiri").innerHTML = getPealkiri(id)
     document.getElementById("postitus_pic").src = getPicture(id)
+    document.querySelector('.modal-dialog').style.display = "flex";
 }
 
 function getPealkiri(id) {
