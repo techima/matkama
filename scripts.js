@@ -61,12 +61,17 @@ function showContents(id) {
     document.getElementById("kestus").innerHTML = getKestus(id)
     document.getElementById("raskus").innerHTML = getRaskus(id)
     document.getElementById("descriptive_text").innerHTML = getDescription(id);
+    document.getElementById("track_name").innerHTML = getTrackName(id);
     updateMap(id)
     document.querySelector('.bg-modal').style.display = "flex";
 }
 
 function closeWindow() {
     document.getElementById("bg-modal").style.display = "none";
+}
+
+function closeJutudWindow() {
+    document.getElementById("modal-dialog").style.display = "none";
 }
 
 function updateIcons() {
@@ -241,13 +246,51 @@ function getDescription(id) {
     }
 }
 
+function getTrackName(id) {
+    if (id === "rada1") {
+        return "Paukjärve matkarada"
+    } else if (id == "rada2") {
+        return "Ontika väike matkarada"
+    } else if (id == "rada3") {
+        return "Turba - Vinnuki matkarada"
+    } else {
+        return "Võrtsjärve paadirada"
+    }
+}
+
 function selectedDifficulty(selectObject) {
     raskus = selectObject.value;  
     updateTracks()
 }
 
 function showPostContent(id) {
+    document.querySelector('.modal-dialog').style.display = "flex";
+    document.getElementById("postituse_pealkiri").innerHTML = getPealkiri(id)
+    document.getElementById("postitus_pic").src = getPicture(id)
+}
 
+function getPealkiri(id) {
+    if (id === "esimene") {
+        return "Kuidas miinuskraadid positiivust teevad | 22.02.2022 | MatkaKati"
+    } else if (id === "teine") {
+        return "Meestega Matsalus | 12.12.2021 | MatkaMati"
+    } else if (id === "kolmas") {
+        return "Võrtsjärve seiklus | 15.08.2021 | TiQ"
+    } else {
+        return "Koeru raba | 17.06.2020 | Meelis"
+    }
+}
+
+function getPicture(id) {
+    if (id === "esimene") {
+        return "resources/winter.jpeg"
+    } else if (id === "teine") {
+        return "resources/matsalu.jpeg"
+    } else if (id === "kolmas") {
+        return "resources/vortsjarv.jpeg"
+    } else {
+        return "resources/koeru.jpeg"
+    }
 }
 
 function showAllPosts() {
